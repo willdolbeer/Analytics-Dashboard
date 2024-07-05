@@ -1,0 +1,10 @@
+<p-menubar [model]="items" styleClass="navbar">
+  <ng-template pTemplate="item" let-item>
+    <span class="ml-2">{{ item.label }}</span>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="flex align-items-center gap-2">
+      <p-button label="Reports" [link]="true" icon="pi pi-check" iconPos="right" />
+    </div>
+  </ng-template>
+</p-menubar>

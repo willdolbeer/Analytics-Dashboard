@@ -10,3 +10,6 @@ header {
 .content {
   padding: var(--content-padding);
 }
+.p-menubar {
+  background: #21128a;
+}

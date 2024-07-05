@@ -1,8 +1,8 @@
-interface DataResponse {
+export interface DataResponse {
   [index: string]: string | number;
 }
 
-interface DatasetResponse {
+export interface DatasetResponse {
   name: string;
   data: DataResponse[];
 }
@@ -12,12 +12,12 @@ interface FullDataResponse {
   dataSets: DatasetResponse[];
 }
 
-interface ElementGroup {
+export interface ElementGroup {
   name: string;
   label: string;
   type: ElementType;
-  position: ElementPosition;
   elements: Element[];
+  width: number;
 }
 
 type ElementType = 'DATA_POINT' | 'DATA_SET';
@@ -34,7 +34,7 @@ interface DatasetFields {
   name: string;
 }
 
-interface FieldDefinitions {
+export interface FieldDefinitions {
   [index: string]: FieldDefinition;
 }
 
@@ -281,13 +281,13 @@ const newLayoutResponse: LayoutResponse = {
       name: 'summary',
       label: 'Summary',
       type: 'DATA_SET',
-      width: 12
+      width: 12,
       elements: [
         {
           name: 'summary',
           displayName: 'Summary',
           type: 'DATA_SET',
-          width: 12
+          width: 12,
           fields: [
             { name: 'channel' },
             { name: 'segment' },

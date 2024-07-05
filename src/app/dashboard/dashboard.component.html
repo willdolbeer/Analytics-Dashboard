@@ -1,0 +1,34 @@
+<div class="metrics-wrapper">
+  <div *ngFor="let section of dataPointsLayout" [ngStyle]="{'flex': getFlexValue(section.width)}">
+    <h3>{{section.label}}</h3>
+    <div class="metrics-wrapper">
+      <div *ngFor="let metric of section.elements"  [ngStyle]="{'flex': getFlexValue(metric.width)}">
+        <div>{{fieldDefinitions[metric.name].label}}</div>
+        <div>{{dataPoints[metric.name]}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let dataSet of dataSetsLayout; index as i">
+  <h3>{{dataSet.label}}</h3>
+  <p-table
+      [columns]="dataSet.elements[0].fields"
+      [value]="dataSets[i].data"
+      styleClass="p-datatable-striped"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{fieldDefinitions[col.name].label}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{ rowData[col.name] }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
