@@ -7,7 +7,6 @@ import { MenubarModule } from 'primeng/menubar';
   standalone: true,
   imports: [ButtonModule, MenubarModule],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
   items =[{label: 'Marketing Analytics Dashboard'}];

@@ -41,7 +41,7 @@ export interface FieldDefinitions {
 type Format = 'datetime' | 'currency' | 'percent' | 'number' | 'none';
 type Type = 'string' | 'double' | 'datetime';
 
-interface FieldDefinition {
+export interface FieldDefinition {
   label: string;
   format: Format;
   type: Type;
