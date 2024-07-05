@@ -30,7 +30,7 @@ import {
 export class DashboardComponent {
   dataPoints: DataResponse = backendDataResponse.dataPoints;
   dataPointsLayout: ElementGroup[] = newLayoutResponse.layout.filter(
-    (section) => section.type === "DATA_POINT"
+    (section) => section.type === 'DATA_POINT'
   );
   dataSets: DatasetResponse[] = backendDataResponse.dataSets;
   dataSetsLayout: ElementGroup[] = newLayoutResponse.layout.filter(
@@ -52,8 +52,8 @@ export class DashboardComponent {
       case 'currency':
         return this.currencyPipe.transform(
           value,
-          "USD",
-          "$",
+          'USD',
+          '$',
           fieldDefinition.digitsInfo
         );
       case 'number':
@@ -82,12 +82,12 @@ export class DashboardComponent {
   getAggregateValue(field: string, dataSetIndex: number) {
     const fieldDefinition = this.fieldDefinitions[field];
     switch (fieldDefinition.aggFn) {
-      case "average":
+      case 'average':
         return this.getFormattedValue(
           this.getAvgOfRows(field, dataSetIndex),
           fieldDefinition
         );
-      case "sum":
+      case 'sum':
         return this.getFormattedValue(
           this.getSumOfRows(field, dataSetIndex),
           fieldDefinition
